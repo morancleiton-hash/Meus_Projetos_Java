@@ -1,0 +1,50 @@
+//FAÇA UM PROGRAMA EM JAVA QUE DADO UM VALOR EM REAIS CALCULE QUANTAS NOTAS DE 100, 10 E 2,
+//SAO NECESSARIAS PARA COMPOR ESSE VALOR. POR EXEMPLO:
+
+//VALOR: 256
+//2 X 100
+//5 X 10
+//3 X 2
+
+javaimport java.util.Locale;
+import java.util.Scanner;
+
+public class Lista01_Semana03_cxeletronico_logmatbasica {
+    public static void main(String[] args) {
+        Locale.setDefault(Locale.US);
+        Scanner sc = new Scanner(System.in);
+
+        // 1. Entrada de dados
+        System.out.print("Digite o valor em Reais (R$): ");
+        int valorTotal = sc.nextInt();
+
+        int restinho = valorTotal;
+
+        // 2. Lógica para Notas de 100
+        int notas100 = restinho / 100; 
+        int valorPago100 = notas100 * 100;
+        restinho = restinho - valorPago100; // Subtrai o valor que já foi pago em notas de 100
+
+        // 3. Lógica para Notas de 10
+        int notas10 = restinho / 10;
+        int valorPago10 = notas10 * 10;
+        restinho = restinho - valorPago10;  // Subtrai o valor que já foi pago em notas de 10
+
+        // 4. Lógica para Notas de 2
+        int notas2 = restinho / 2;
+        int valorPago2 = notas2 * 2;
+        restinho = restinho - valorPago2;   // Subtrai o valor que já foi pago em notas de 2
+
+        // 5. Exibição dos resultados
+        System.out.println("\n--- Resultado do Saque ---");
+        System.out.printf("Valor informado: R$ %d%n", valorTotal);
+        System.out.printf("Notas de R$ 100: %d%n", notas100);
+        System.out.printf("Notas de R$ 10:  %d%n", notas10);
+        System.out.printf("Notas de R$ 2:   %d%n", notas2);
+        
+        if (restinho > 0) {
+            System.out.printf("Sobrou R$ %d em moedas.%n", restinho);
+        }
+
+        sc.close();
+    }
