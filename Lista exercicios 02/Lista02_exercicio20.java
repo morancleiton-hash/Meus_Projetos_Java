@@ -41,7 +41,16 @@ if (combustivel.equals("G") && quantidade <= 30) {
     desconto = valorbruto * 0.05f;
     valorfinal = valorbruto - desconto;
 
-    }
+    } else if (combustivel.equals("E") && quantidade <= 30) {
+     valorbruto = quantidade * 4.10f;
+     valorfinal = valorbruto;
+
+} else if (combustivel.equals("E") && quantidade>30) {
+    valorbruto = quantidade * 4.10f;
+    desconto = valorbruto * 0.05f;
+    valorfinal = valorbruto - desconto;
+}
+
 
 
 
